@@ -78,7 +78,7 @@ function pairSum(array,sum) {
         map[target] = true
         }
     }
-    //if flowed thru entire array, exit false
+    //if flowed thru entire array and no matches, exit false
     return false
 }
 

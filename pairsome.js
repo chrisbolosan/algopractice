@@ -35,30 +35,51 @@ console.log(pairSum([-1, 2, 3, 4, 7], 6))
 //   }
 
 //Marker method slightly faster than nested method
+// function pairSum(array,sum) {
+//     //using markers
+//   let left = 0
+//   //end of array
+//   let right = array.length-1
+//   //control flow
+//   while (left<right) {
+//     //marker subtotal
+//     const subtotal = array[left] +array[right]
+  
+//   //compare subtotal to sum target
+//   if (subtotal === sum) {
+//     return true
+//     //if the total does not equal to sum, move the markers
+  
+//   } else if (subtotal <sum) {
+//     //increment left marker
+//     left ++
+//   } else if(subtotal >sum) {
+//     //decrement left marker
+//     right --
+//   }
+//   }
+//   return false
+//   }
+
+//key/value mapping method time O(n) space O(1)
 function pairSum(array,sum) {
-    //using markers
-  let left = 0
-  //end of array
-  let right = array.length-1
-  //control flow
-  while (left<right) {
-    //marker subtotal
-    const subtotal = array[left] +array[right]
-  
-  //compare subtotal to sum target
-  if (subtotal === sum) {
-    return true
-    //if the total does not equal to sum, move the markers
-  
-  } else if (subtotal <sum) {
-    //increment left marker
-    left ++
-  } else if(subtotal >sum) {
-    //decrement left marker
-    right --
-  }
-  }
-  return false
-  }
+//set object for key/value pair
+    let map ={}
+    //iterate thru array
+    for (let i=0; i<=array.length;i++) {
+    // y = sum -x   y is target total, x represents the iteration
+    //thus if x + y equals the sum, returns true
+    const target = sum-array[i] 
+    // if exists in map just return true
+        if (map[array[i]]) {
+        return true
+        } else {
+        //if does not exist set new key value pair 
+        map[target] = true
+        }
+    }
+    //if flowed thru entire array, exit false
+    return false
+}
 
 

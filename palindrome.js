@@ -11,12 +11,13 @@ function isPalindrome(str) {
       if (first !== last) {
         return false
       } else {
-          str.slice(1,str.length-1) 
+        str.slice(1,str.length-1) 
   
       } return true
     }
   
-   }
+}
+
   isPalindrome('!? 100 ABCcba 001 ?!')
   console.log(isPalindrome('car'))
   console.log(isPalindrome('racecar'))

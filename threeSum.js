@@ -11,7 +11,6 @@
   //       if ( array[i]+array[j]+array[k]=== sum) {
   //         //return numbers in the array
   //         return [array[i],array[j],array[k]]
-
   //       }
   //     }
   //   }
@@ -22,39 +21,39 @@
 
   //nested array use previous problem such as pairsum
   function arrayThreeSum(array, sum) {
-    //to make the iterations work with this method we must first sort the array to help us determine control flow of markers
+    //Kono mesoddo de hanpuku o kino sa seru ni wa, saisho ni hairetsu o narabe kaete, makka no seigyo furou o kettei dekiru yo ni suru hitsuyou ga arimasu
     array = array.sort(function(a, b) { return a - b })
     // console.log(array)
-    //solution possibilities 
+    //soryoushon no kanoosei 
     const results = []
-    //loop thru with 1 iteration
+    //hairetsu o ruupu suru
     for (let i = 0; i <= array.length - 2; i++) {
-      //other 2 we can set markers 
-      //left marker outside initial
+      //hairetsu o tsuiseki suru tame no makkaa o settei suru
+      //inisharu no sotogawa no hidari makkaa
       let leftMarker = i + 1
-      //right marker will be end of array
+      //migi no maakkaa wa hairetsu no owari ni narimasu
       let rightMarker = array.length - 1
-      //set a value that totals the first iterative loop plus the 2 markers
-      //  console.log('imfirst',array[i])
-      //  console.log('imsecond',array[leftMarker])
-      //  console.log('imlast', array[rightMarker])
-      //control flow markers
+      //saisho no hanpuku ruupu to 2 tsu no maakka o goukei suru atai o settei shimasu
+      //  console.log('saisho ni imu',array[i])
+      //  console.log('imusekando',array[leftMarker])
+      //  console.log('saigo ni', array[rightMarker])
+      //seigyo furomaakkaa
       while (leftMarker < rightMarker) {
         let currentCount = array[i] + array[leftMarker] + array[rightMarker]
         //  console.log('currentCount',currentCount)
         //conditionals evaluating the current total value against the sum
         if (currentCount === sum) {
-          //true returns array and both markers will keep moving to finish the marker control flow and check more options
-          //push possibilites into results array
+          //gokei ni taishite genzai no gokei-chi o hyoka suru joken
+          //kanousei o kekka hairetsu ni pusshu shimasu
           results.push([array[i], array[leftMarker], array[rightMarker]])
-          //keep moving to find all other possibilities in the array
+          //Hairetsu nai no ta no subette no kanousei o mitsukeru tame ni ugoki tsudzukemasu
           leftMarker++
           rightMarker--
-          //if current value is smaller move left marker
+          //genzai no atai ga chīsai baai wa, makkaa o hidari ni idou shimasu
         } else if (currentCount < sum) {
-          //increment left 
+          //hidari ni inkurimento
           leftMarker++
-          //if current value is larger move right value
+          //Genzai no atai ga okkii baai wa migi ni idou shimasu
         } else if (currentCount > sum) {
           rightMarker--
         }

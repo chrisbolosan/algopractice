@@ -63,17 +63,30 @@
 //   }
     //Mappingu hohou, hairetsu wa sooto sa rete imasen
 function arrayThreeSum(array, sum) { 
-
-//modori-chi no atai o pusshu suru yoo ni sutoreji o settei shimasu
-//shoki ruupu o settei suru
-//ki to atai no pea o kakunou suru tame no mappu o settei suru
-//moichido ruupu suru 
-//mappi ni sonzai suru ka doo ka o kakunin shimasu
-//moshi sonara, chi o pusshu shimasu
-//sodenai baai wa, chi o settei shimasu
-//modori chi
+    //modori-chi no atai o pusshu suru yoo ni sutoreji o settei shimasu
+        let results=[]
+    //shoki ruupu o settei suru
+        for (let i=0;i<array.length-1;i++) {
+    //ki to atai no pea o kakunou suru tame no mappu o settei suru
+        let map={};
+        // y= gokei wa tagetto no goukei, x wa hanpuku o arawashimasu
+        const target = sum - array[i]
+    //moichido ruupu suru 
+        for (let j=i +1;j<array.length;j++) {
+    //mappi ni sonzai suru ka doo ka o kakunin shimasu
+            if (map[target-array[j]]) {
+    //moshi sonara, chi o pusshu shimasu
+            results.push([array[i],target-array[j],array[j]])
+            } else {
+    //sodenai baai wa, chi o settei shimasu
+            map[array[j]] = true
+            }
+        }
+    }
+    //modori chi
+    return results
 }
-  
+    
   console.log('testCase1',arrayThreeSum([12, 3, 1, 2, -6, 5, -8, 6], 0)) 
   console.log('testCase2',arrayThreeSum([5, 6 , 1, -9 , 7, 3 , 2], 35))   
   console.log('testCase3',arrayThreeSum([1, 15, -5, 12 , -3, 6 , 2], 10)) 

@@ -6,3 +6,20 @@ function Node(data) {
   this.data = data;
   this.next = null;
 }
+
+function removeDuplicates(head) {
+  if (!head) return null;
+  if (!head.next) return head;
+
+  let current = head;
+  let previous = new Node();
+
+  while (current) {
+    if (prev.data === current.data) previous.next = current.next;
+    else previous = current;
+
+    current = current.next;
+  }
+
+  return head;
+}

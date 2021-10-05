@@ -15,7 +15,7 @@ function removeDuplicates(head) {
   let previous = new Node();
 
   while (current) {
-    if (prev.data === current.data) previous.next = current.next;
+    if (previous.data === current.data) previous.next = current.next;
     else previous = current;
 
     current = current.next;

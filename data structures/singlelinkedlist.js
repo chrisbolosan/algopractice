@@ -73,6 +73,11 @@ class SinglyLinkedList {
     // sakujo sa reta noodo no atai o kaeshimasu
     return current;
   }
+
+  //shifuto
+  //noodo ga nai baai wa, miteigi o kaeshimasu
+  //genzai no head puropati o hensuu ni kakunoo shimasu
+  //head puropati o genzai no head no tsugi no puropati ni settei shimasu
 }
 let list = new SinglyLinkedList();
 list.osu('hello');

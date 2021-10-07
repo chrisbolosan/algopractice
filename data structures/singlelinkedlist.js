@@ -92,6 +92,15 @@ class SinglyLinkedList {
     }
     return currentHead;
   }
+  //   shifutoKaijo
+  //atai o toru
+  shifutoKaijo(val) {
+    // atashi noodo o sakusei shimasu
+    //head puropati ga nai baai wa, head to teru o atarashi nodo ni settei shimasu
+    //Sore igai no baai wa, teru o tsugi no noodo ni settei shi, heddo o atarashi noodo ni settei shimasu
+    //risuto no naga sa o inkurimento shimasu
+    //rinkurisuto o kaesu
+  }
 }
 let list = new SinglyLinkedList();
 list.osu('hello');

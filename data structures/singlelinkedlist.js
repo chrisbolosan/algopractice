@@ -96,10 +96,20 @@ class SinglyLinkedList {
   //atai o toru
   shifutoKaijo(val) {
     // atashi noodo o sakusei shimasu
+    let newNode = new Node(val);
     //head puropati ga nai baai wa, head to teru o atarashi nodo ni settei shimasu
-    //Sore igai no baai wa, teru o tsugi no noodo ni settei shi, heddo o atarashi noodo ni settei shimasu
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      //Sore igai no baai wa, teru o tsugi no noodo ni settei shi, heddo o atarashi noodo ni settei shimasu
+      newNode.next = this.head;
+      this.head = newNode;
+    }
     //risuto no naga sa o inkurimento shimasu
+    this.length++;
     //rinkurisuto o kaesu
+    return this;
   }
 }
 let list = new SinglyLinkedList();

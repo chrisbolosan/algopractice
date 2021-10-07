@@ -29,7 +29,6 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
-  //poppu
 
   //   traverse() {
   //     //atama kara hajimeru
@@ -41,6 +40,39 @@ class SinglyLinkedList {
   //       current = current.next;
   //     }
   //   }
+
+  //poppu
+  poppu(val) {
+    //if there are no nodes, return undefined
+    if (!this.head) {
+      return undefined;
+    }
+    // saisho kara hajimeru
+    let current = this.head;
+    let newTail = current;
+    //teru ni totatsu suru made risuto o torabasu shimasu
+    while (current.next) {
+      // ryoho o dojini ugokasu
+      newTail = current;
+      current = current.next;
+    }
+    // console.log(current.val);
+    // console.log(newTail.val);
+
+    //teru o saigo kara 2 banme no noodo ni settei shimasu
+    this.tail = newTail;
+    //saigo kara 2 banme no noodo no tsugi no puropati o null ni settei shimasu
+    this.tail.next = null;
+    //dekurimento
+    this.length--;
+    //risuto ga sora no baai
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    // sakujo sa reta noodo no atai o kaeshimasu
+    return current;
+  }
 }
 let list = new SinglyLinkedList();
 list.osu('hello');

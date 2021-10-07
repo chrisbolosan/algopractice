@@ -6,8 +6,9 @@ class Point {
     this.y = y;
   }
   static distance(a, b) {
-    dx = a.x - b.x;
-    dy = a.y - b.y;
+    const dx = a.x - b.x;
+    const dy = a.y - b.y;
+    return Math.hypot(dx - dy);
   }
 }
 const p1 = new Point(5, 5);

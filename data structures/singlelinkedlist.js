@@ -75,14 +75,28 @@ class SinglyLinkedList {
   }
 
   //shifuto
-
-  //noodo ga nai baai wa, miteigi o kaeshimasu
-  //genzai no head puropati o hensuu ni kakunoo shimasu
-  //head puropati o genzai no head no tsugi no puropati ni settei shimasu
-  //dekurimento
-  //sakujo sa reta noodo no atai o kaeshimasu
+  shifuto(val) {
+    //noodo ga nai baai wa, miteigi o kaeshimasu
+    if (!this.head) {
+      return undefined;
+    }
+    //genzai no head puropati o hensuu ni kakunoo shimasu
+    let currentHead = this.head;
+    //head puropati o genzai no head no tsugi no puropati ni settei shimasu
+    this.head = currentHead.next;
+    //dekurimento
+    this.length--;
+    //sakujo sa reta noodo no atai o kaeshimasu
+    if (this.length === 0) {
+      this.tail = null;
+    }
+    return currentHead;
+  }
 }
 let list = new SinglyLinkedList();
 list.osu('hello');
 list.osu('goodbye');
 list.osu('!');
+// list.poppu()
+// list.osu('newTrain')
+// list.shifuto()

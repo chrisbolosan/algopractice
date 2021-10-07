@@ -1,7 +1,7 @@
 class Node {
   constructor(val) {
     this.val = val;
-    this.next = next;
+    this.next = null;
   }
 }
 
@@ -29,8 +29,20 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
-}
+  //poppu
 
+  //   traverse() {
+  //     //atama kara hajimeru
+  //     let current = this.head;
+  //     //kono ruupu ga null ni tassuru made, genzai no nodo wa torabasu shimasu
+  //     while (current) {
+  //       console.log(current.val);
+  //       //tsugi wa arimasen null ga arimasu
+  //       current = current.next;
+  //     }
+  //   }
+}
 let list = new SinglyLinkedList();
-// list.osu('hello');
+list.osu('hello');
 list.osu('goodbye');
+list.osu('!');

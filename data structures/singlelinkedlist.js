@@ -111,6 +111,8 @@ class SinglyLinkedList {
     //rinkurisuto o kaesu
     return this;
   }
+  //eru
+  eru(val) {}
 }
 let list = new SinglyLinkedList();
 list.osu('hello');

@@ -147,6 +147,9 @@ class SinglyLinkedList {
   //indekkusu ga 0 no baai wa, atarashī noodo o risuto no sentoo ni shifuto kaijo shimasu
   //Sore igai no baai wa, get mesoddo o shiyoo shite, indekkusu - 1 no noodo ni akusesu shimasu.
   //Sono noodo no tsugi no puropati o atarashii noodo ni settei shimasu
+  //sono noodo no tsugi no puropati o atarashii noodo ni settei shimasu
+  //naga sa o inkurimento suru
+  //tsuru o kaesu
 }
 let list = new SinglyLinkedList();
 list.osu('hello');

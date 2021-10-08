@@ -129,7 +129,11 @@ class SinglyLinkedList {
   }
   //settei
 
-  settei(index, val) {}
+  settei(index, val) {
+    //Get kansuu o shiyoo shite, tokutei no nōdo o mitsukemasu
+    //noodo ga mitsukaranai baai wa false o kaeshimasu
+    //noodo ga mitsukatta baai wa,-chi o tokutei no indekkusu no atai ni settei shi, tsuruu o kaeshimasu
+  }
 }
 let list = new SinglyLinkedList();
 list.osu('hello');

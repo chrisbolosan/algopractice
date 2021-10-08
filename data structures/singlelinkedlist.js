@@ -112,7 +112,11 @@ class SinglyLinkedList {
     return this;
   }
   //eru
-  eru(val) {}
+  eru(index) {
+    //Indekkusu o ukeireru
+    //Risuto ga 0-miman, 0 ni hitoshii, matawa risuto no naga-sa ni hitoshii baai wa, null o kaeshimasu
+    //Indekkusu ni tootatsu suru made risuto o ruupu shi, sono tokutei no indekkusu ni aru noodo o kaeshimasu
+  }
 }
 let list = new SinglyLinkedList();
 list.osu('hello');

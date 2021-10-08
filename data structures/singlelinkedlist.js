@@ -131,9 +131,22 @@ class SinglyLinkedList {
 
   settei(index, val) {
     //Get kansuu o shiyoo shite, tokutei no nōdo o mitsukemasu
+    let foundNode = this.get(index);
     //noodo ga mitsukaranai baai wa false o kaeshimasu
+    if (foundNode) {
+      foundNode.val = val;
+      return true;
+    }
+    return false;
     //noodo ga mitsukatta baai wa,-chi o tokutei no indekkusu no atai ni settei shi, tsuruu o kaeshimasu
   }
+  //ieru
+
+  //indekkusu ga 0-miman matawa naga-sa yori ookii baai wa, false o kaeshimasu
+  //indekkusu ga naga-sa to onajidearu baai wa, atarashii noodo o risuto no saigo ni pusshu shimasu
+  //indekkusu ga 0 no baai wa, atarashī noodo o risuto no sentoo ni shifuto kaijo shimasu
+  //Sore igai no baai wa, get mesoddo o shiyoo shite, indekkusu - 1 no noodo ni akusesu shimasu.
+  //Sono noodo no tsugi no puropati o atarashii noodo ni settei shimasu
 }
 let list = new SinglyLinkedList();
 list.osu('hello');

@@ -127,6 +127,9 @@ class SinglyLinkedList {
     }
     return current;
   }
+  //settei
+
+  settei(index, val) {}
 }
 let list = new SinglyLinkedList();
 list.osu('hello');

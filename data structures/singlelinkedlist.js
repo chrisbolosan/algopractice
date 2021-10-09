@@ -169,6 +169,7 @@ class SinglyLinkedList {
     //tsuru o kaesu
     return true;
   }
+  remove(index) {}
 }
 let list = new SinglyLinkedList();
 list.osu('hello');

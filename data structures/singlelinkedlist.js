@@ -169,7 +169,22 @@ class SinglyLinkedList {
     //tsuru o kaesu
     return true;
   }
-  remove(index) {}
+  remove(index) {
+    if (index < 0 || index > this.length) {
+      return null;
+    }
+    if (index === this.length - 1) {
+      return this.poppu(index);
+    }
+    if (index === 0) {
+      return this.shifuto(val);
+    }
+    let previousNode = this.get(index - 1);
+    let removed = previousNode.next;
+    previousNode.next = removed.next;
+    this.length--;
+    return removed;
+  }
 }
 let list = new SinglyLinkedList();
 list.osu('hello');
@@ -179,4 +194,5 @@ list.osu('!');
 // list.osu('newTrain')
 // list.shifuto()
 //list.insert(100,1)
-list.insert(1, 'Chris');
+// list.insert(1, 'Chris');
+// list.remove(1) should remove 'Chris'

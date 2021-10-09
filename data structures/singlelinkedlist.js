@@ -142,14 +142,33 @@ class SinglyLinkedList {
   }
   //ieru
 
-  //indekkusu ga 0-miman matawa naga-sa yori ookii baai wa, false o kaeshimasu
-  //indekkusu ga naga-sa to onajidearu baai wa, atarashii noodo o risuto no saigo ni pusshu shimasu
-  //indekkusu ga 0 no baai wa, atarashī noodo o risuto no sentoo ni shifuto kaijo shimasu
-  //Sore igai no baai wa, get mesoddo o shiyoo shite, indekkusu - 1 no noodo ni akusesu shimasu.
-  //Sono noodo no tsugi no puropati o atarashii noodo ni settei shimasu
-  //atarashii noodo no tsugi no puropati o mae no tsugi no puropati ni settei shimasu
-  //naga sa o inkurimento suru
-  //tsuru o kaesu
+  ieru(index, val) {
+    //indekkusu ga 0-miman matawa naga-sa yori ookii baai wa, false o kaeshimasu
+    if (index < 0 || index > this.length) {
+      return false;
+    }
+    //indekkusu ga naga-sa to onajidearu baai wa, atarashii noodo o risuto no saigo ni pusshu shimasu
+    if (index === this.length) {
+      return this.osu(val);
+    }
+    //indekkusu ga 0 no baai wa, atarashī noodo o risuto no sentoo ni shifuto kaijo shimasu
+    if (index === 0) {
+      return this.shifutoKaijo(val);
+    }
+    //Sore igai no baai wa, get mesoddo o shiyoo shite, indekkusu - 1 no noodo ni akusesu shimasu.
+    let newNode = new Node(val);
+    let previous = this.get(index - 1);
+    let temp = previous.next;
+
+    //Sono noodo no tsugi no puropati o atarashii noodo ni settei shimasu
+    previous.next = newNode;
+    //atarashii noodo no tsugi no puropati o mae no tsugi no puropati ni settei shimasu
+    newNode.next = temp;
+    //naga sa o inkurimento suru
+    this.length++;
+    //tsuru o kaesu
+    return true;
+  }
 }
 let list = new SinglyLinkedList();
 list.osu('hello');
@@ -158,3 +177,5 @@ list.osu('!');
 // list.poppu()
 // list.osu('newTrain')
 // list.shifuto()
+//list.insert(100,1)
+list.insert(1, 'Chris');

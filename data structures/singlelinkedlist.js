@@ -289,6 +289,18 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
+  get(index) {
+    if (index < 0 || index > this.length) {
+      return null;
+    }
+    let count = 0;
+    let current = this.head;
+    while (count !== index) {
+      count++;
+      current.next = this.head;
+    }
+    return current;
+  }
 }
 let list = new SinglyLinkedList();
 list.push('Go');

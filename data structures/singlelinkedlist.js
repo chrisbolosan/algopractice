@@ -265,6 +265,18 @@ class SinglyLinkedList {
     }
     return current;
   }
+  shift() {
+    if (!this.head) {
+      return null;
+    }
+    let currentHead = this.head;
+    this.head = currentHead.next;
+    this.length--;
+    if (!this.length) {
+      this.tail = null;
+    }
+    return currentHead;
+  }
 }
 let list = new SinglyLinkedList();
 list.push('Go');

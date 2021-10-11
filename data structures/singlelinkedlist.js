@@ -235,7 +235,7 @@ class SinglyLinkedList {
   }
   push(val) {
     let newNode = new Node(val);
-    if (!head) {
+    if (!this.head) {
       this.head = newNode;
       this.tail = this.head;
     } else {
@@ -245,4 +245,28 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
+  pop(val) {
+    if (!this.head) {
+      return null;
+    }
+    let current = this.head;
+    let newTail = current;
+    //traverse
+    while (current.next) {
+      newTail = current;
+      current = current.next;
+    }
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+    if (!this.length) {
+      this.head = null;
+      this.tail = null;
+    }
+    return current;
+  }
 }
+let list = new SinglyLinkedList();
+list.push('Go');
+list.push('Faster');
+list.push('!!!!');

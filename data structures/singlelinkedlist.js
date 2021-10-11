@@ -314,3 +314,5 @@ let list = new SinglyLinkedList();
 list.push('Go');
 list.push('Faster');
 list.push('!!!!');
+list.set(2, 'Chris');
+list.get(2);

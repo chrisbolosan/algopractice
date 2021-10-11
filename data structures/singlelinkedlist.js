@@ -329,15 +329,23 @@ class SinglyLinkedList {
     return true;
   }
   remove(index) {
-    if (index < 0 || index > this.length) {
+    if (index < 0 || index >= this.length) {
       return null;
     }
     //beginning
     if (index === 0) {
-      return this.shift(index);
+      return this.shift();
     }
     //end
+    if (index === this.length - 1) {
+      return this.pop();
+    }
     //middle
+    let previousNode = this.get(index - 1);
+    let removedNode = previousNode.next;
+    previousNode.next = removedNode.next;
+    this.length--;
+    return removedNode;
   }
 }
 let list = new SinglyLinkedList();
@@ -346,3 +354,5 @@ list.push('Faster');
 list.push('!!!!');
 list.set(2, 'Chris');
 list.get(2);
+list.push('now');
+list.remove(3);

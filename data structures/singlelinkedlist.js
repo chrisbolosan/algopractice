@@ -297,9 +297,17 @@ class SinglyLinkedList {
     let current = this.head;
     while (count !== index) {
       count++;
-      current.next = this.head;
+      current = current.next;
     }
     return current;
+  }
+  set(index, val) {
+    let found = this.get(index);
+    if (found) {
+      found.val = val;
+      return true;
+    }
+    return false;
   }
 }
 let list = new SinglyLinkedList();

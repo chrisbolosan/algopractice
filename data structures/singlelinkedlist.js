@@ -328,6 +328,17 @@ class SinglyLinkedList {
     this.length++;
     return true;
   }
+  remove(index) {
+    if (index < 0 || index > this.length) {
+      return null;
+    }
+    //beginning
+    if (index === 0) {
+      return this.shift(index);
+    }
+    //end
+    //middle
+  }
 }
 let list = new SinglyLinkedList();
 list.push('Go');

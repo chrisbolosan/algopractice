@@ -220,3 +220,17 @@
 // //list.insert(100,1)
 // // list.insert(1, 'Chris');
 // // list.remove(1) should remove 'Chris'
+
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+class SinglyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+}

@@ -309,6 +309,25 @@ class SinglyLinkedList {
     }
     return false;
   }
+  insert(index, val) {
+    if (index < 0 || index > this.length) {
+      return false;
+    }
+    if (index === 0) {
+      return this.unshift(val);
+    }
+    if (index === this.length) {
+      return this.push(val);
+    }
+    let newNode = new Node(val);
+    let previous = this.get(index - 1);
+    let temp = previous.next;
+    previous.next = newNode;
+    //attach to next node prevent deletion
+    newNode.next = temp;
+    this.length++;
+    return true;
+  }
 }
 let list = new SinglyLinkedList();
 list.push('Go');

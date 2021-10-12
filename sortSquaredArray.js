@@ -6,3 +6,4 @@ function sortedSquaredArray(array) {
   }
   return squared.sort((a, b) => a - b);
 }
+//test cases [2,5,7,8,10] => [4,25,49,64,100]

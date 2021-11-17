@@ -21,7 +21,7 @@ const longestPalindrome = function (s) {
     for (const j of [0, 1]) {
       let left = i;
       let right = i + j;
-      while (left >= 00 && s[left] === s[right]) {
+      while (left >= 0 && s[left] === s[right]) {
         left--;
         right++;
       }

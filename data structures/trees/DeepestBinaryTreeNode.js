@@ -61,4 +61,4 @@ d.left = f;
 c.left = e;
 d.right = g;
 
-console.log(findDeepest(a)); //Result: f
+console.log(findDeepest(a));
